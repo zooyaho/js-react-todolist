@@ -6,7 +6,7 @@ const Header = () => {
     justify-content: center;
     div {
       width: 20rem;
-      margin-top: 2rem;
+      margin-top: 5rem;
       background-color: #fff;
       display: flex;
       align-items: center;
@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <Header>
       <div>
-        <h1>TODO LIST</h1>
+        <h1>TODO LIST ✍️</h1>
       </div>
     </Header>
   );

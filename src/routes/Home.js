@@ -1,6 +1,6 @@
-import Header from "../components/Header";
+import Header from "../components/Home/Header";
 import TodoList from "../components/Todo/TodoList";
-import AddBtn from "../components/AddBtn";
+import AddBtn from "../components/Home/AddBtn";
 import { Link } from "react-router-dom";
 const Home = () => {
   return (
