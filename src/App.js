@@ -1,17 +1,14 @@
-import AddBtn from "./AddBtn";
-import Header from "./Header";
-import TodoList from "./Todo/TodoList";
-import { useState } from "react";
+import Home from "./routes/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [] = useState(true);
-  const AddTodoHandler = () => {};
   return (
-    <>
-      <Header />
-      <TodoList />
-      <AddBtn onClick={AddTodoHandler} />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route exact path="/write" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

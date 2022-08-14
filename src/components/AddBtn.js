@@ -17,6 +17,7 @@ const AddBtn = () => {
     &:hover {
       width: 5rem;
       height: 5rem;
+      font-size: 50px;
       border-radius: 2.5rem;
     }
   `;
