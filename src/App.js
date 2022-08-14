@@ -1,4 +1,5 @@
 import Home from "./routes/Home";
+import Write from "./routes/Write";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route exact path="/write" element={<Home />} />
+        <Route exact path="/write" element={<Write />} />
       </Routes>
     </BrowserRouter>
   );
