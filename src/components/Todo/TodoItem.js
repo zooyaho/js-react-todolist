@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const TodoItem = () => {
   const TodoItem = styled.li`
@@ -10,7 +11,9 @@ const TodoItem = () => {
   `;
   return (
     <>
-      <TodoItem>Title...</TodoItem>
+      <TodoItem>
+        <Link to="/todo/124">Title...</Link>
+      </TodoItem>
     </>
   );
 };
