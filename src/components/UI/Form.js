@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import ActiveBtnWrap from "../UI/Button/ActiveBtnWrap";
-import ButtonWrap from "../UI/Button/ButtonWrap";
-import { Link } from "react-router-dom";
 
 const WiteForm = () => {
   const WriteForm = styled.form`
@@ -30,14 +27,6 @@ const WiteForm = () => {
     <WriteForm>
       <input type="text" placeholder="title" />
       <textarea cols="50" rows="10" placeholder="content" />
-      <ActiveBtnWrap>
-        <ButtonWrap bgColor={"#BABABA"} paddingSide={"2rem"}>
-          <Link to="/">Back</Link>
-        </ButtonWrap>
-        <ButtonWrap bgColor={"#6ACE5A"} paddingSide={"2rem"}>
-          <Link to="/">Save</Link>
-        </ButtonWrap>
-      </ActiveBtnWrap>
     </WriteForm>
   );
 };

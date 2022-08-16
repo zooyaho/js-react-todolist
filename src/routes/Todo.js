@@ -16,9 +16,6 @@ const Todo = () => {
       align-self: flex-start;
       margin-top: 1rem;
     }
-    div:last-child {
-      margin-left: 2rem;
-    }
   `;
   const ContentWrap = styled.p`
     display: flex;
