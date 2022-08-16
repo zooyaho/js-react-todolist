@@ -1,26 +1,9 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import TodoContext from "../../store/todo-context";
 import TodoItem from "./TodoItem";
-const DUMMY_TODO = [
-  {
-    id: 1,
-    title: "오늘 할일",
-    content: "아침: X, 점심: 시리얼, 저녁: 치즈김밥",
-    date: "22.08.12",
-  },
-  {
-    id: 2,
-    title: "송리단길 가보자고~",
-    content: "피자네버슬립스가서 피맥해야지~~ 제발 웨이팅 없어라🙏",
-    date: "22.08.13",
-  },
-  {
-    id: 3,
-    title: "영화보고싶다....",
-    content: "외계인 보고 싶어...혼영 하고싶어...언제 보지....😥",
-    date: "22.08.14",
-  },
-];
 const TodoList = () => {
+  /* CSS */
   const TodoList = styled.main`
     width: 30rem;
     margin-top: 2rem;
@@ -30,6 +13,7 @@ const TodoList = () => {
     }
   `;
 
+  const todoCtx = useContext(TodoContext);
   /*
       key={todo.id}
       id={todo.id}
@@ -38,15 +22,20 @@ const TodoList = () => {
       date={todo.date}
   */
 
-  const itemList = DUMMY_TODO.map((todo) => (
-    <TodoItem key={todo.id} title={todo.title} date={todo.date} />
-  ));
-
-  return (
-    <TodoList>
-      <ul>{itemList}</ul>
-    </TodoList>
+  const itemList = (
+    <ul>
+      {todoCtx.todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          title={todo.title}
+          date={todo.date}
+        />
+      ))}
+    </ul>
   );
+
+  return <TodoList>{itemList}</TodoList>;
 };
 
 export default TodoList;
