@@ -8,6 +8,12 @@ const TodoItem = () => {
     margin-top: 1rem;
     list-style: none;
     border-radius: 10px;
+    a {
+      font-size: 18px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+    }
   `;
   return (
     <>
