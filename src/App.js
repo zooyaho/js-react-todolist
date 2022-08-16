@@ -1,6 +1,6 @@
 import Home from "./routes/Home";
-import Write from "./routes/Write";
-import Todo from "./routes/Todo";
+import Write from "./routes/WriteTodo";
+import Todo from "./routes/DetailTodo";
 import UpdateTodo from "./routes/UpdateTodo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

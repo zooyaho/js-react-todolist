@@ -1,4 +1,4 @@
-import WriteForm from "../components/UI/Form";
+import WriteForm from "../components/Layout/Form";
 import Date from "../components/UI/Date";
 import Card from "../components/UI/Card";
 import ActiveBtnWrap from "../components/UI/Button/ActiveBtnWrap";

@@ -12,7 +12,7 @@ const Todo = () => {
       margin-left: 2rem;
       margin-top: 2.5rem;
     }
-    p:first-child {
+    span:first-child {
       align-self: flex-start;
       margin-top: 1rem;
     }
