@@ -1,13 +1,17 @@
 import Home from "./routes/Home";
 import Write from "./routes/Write";
+import Todo from "./routes/Todo";
+import UpdateTodo from "./routes/UpdateTodo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/write" element={<Write />} />
+        <Route exact path="/todo/:id" element={<Todo />} />
+        <Route exact path="/update/:id" element={<UpdateTodo />} />
       </Routes>
     </BrowserRouter>
   );
