@@ -20,7 +20,6 @@ const Button = (props) => {
       props.onModalHide();
     }
     if (props.isSave) {
-      console.log("save btn");
       props.onTodoSave();
     }
   };

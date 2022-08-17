@@ -10,7 +10,7 @@ import DateUI from "../components/UI/DateUI";
 
 const WriteTodo = () => {
   const todoCtx = useContext(TodoContext);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const nowTime = new Date();
   const year = nowTime.getFullYear();

@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { useRef } from "react";
-import { v4 } from "uuid";
 
-const WriteForm = (props) => {
+const UpdateForm = (props) => {
   /* CSS */
-  const WriteForm = styled.form`
+  const UpdateForm = styled.form`
     margin-top: 1.5rem;
     width: 100%;
     left: 50%;
@@ -27,30 +26,35 @@ const WriteForm = (props) => {
     }
   `;
 
-  const id = v4();
   const titleInputRef = useRef();
   const contentInputRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onAddTodo(
-      id,
+    props.onUpdateTodo(
       titleInputRef.current.value,
       contentInputRef.current.value
     );
   };
 
   return (
-    <WriteForm onSubmit={submitHandler}>
-      <input ref={titleInputRef} type="text" placeholder="title" />
+    // onSubmit={submitHandler}
+    <UpdateForm onSubmit={submitHandler}>
+      <input
+        ref={titleInputRef}
+        type="text"
+        placeholder="title"
+        defaultValue={props.title}
+      />
       <textarea
         ref={contentInputRef}
         cols="50"
         rows="10"
         placeholder="content"
+        defaultValue={props.content}
       />
       {props.children}
-    </WriteForm>
+    </UpdateForm>
   );
 };
-export default WriteForm;
+export default UpdateForm;

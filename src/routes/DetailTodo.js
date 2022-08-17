@@ -47,7 +47,6 @@ const Todo = () => {
 
   const hideModalHandler = () => {
     setModalIsShown(false);
-    // todoCtx.removeTodo(id);
   };
 
   return (
@@ -72,7 +71,7 @@ const Todo = () => {
               Delete
             </Button>
             <ButtonWrap bgColor={"#5780EB"} paddingSide={"1.2rem"}>
-              <Link to="/update/123">Update</Link>
+              <Link to={`/update/${id}`}>Update</Link>
             </ButtonWrap>
           </ActiveBtnWrap>
         </ContentWrap>
