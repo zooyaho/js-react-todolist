@@ -7,23 +7,23 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import TodoContext from "../../store/todo-context";
 
-const DeleteConfirm = (props) => {
-  /* CSS */
-  const ModalWrap = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  `;
-  const Title = styled.p`
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-  `;
-  const Content = styled.p`
-    text-align: center;
-  `;
+/* CSS */
+const ModalWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+const Title = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+`;
+const Content = styled.p`
+  text-align: center;
+`;
 
+const DeleteConfirm = (props) => {
   const todoCtx = useContext(TodoContext);
 
   const todoDeleteHandler = () => {

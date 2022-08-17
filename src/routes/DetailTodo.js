@@ -9,32 +9,32 @@ import { Link, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import TodoContext from "../store/todo-context";
 
-const Todo = () => {
-  /* CSS */
-  const Todo = styled.div`
-    div div:first-child {
-      margin-left: 2rem;
-      margin-top: 2.5rem;
-    }
-    span:first-child {
-      align-self: flex-start;
-      margin-top: 1rem;
-    }
-  `;
-  const ContentWrap = styled.p`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  `;
-  const Title = styled.h2`
-    margin-top: 2rem;
-    width: 80%;
-  `;
-  const Content = styled.p`
-    width: 80%;
-  `;
+/* CSS */
+const TodoSt = styled.div`
+  div div:first-child {
+    margin-left: 2rem;
+    margin-top: 2.5rem;
+  }
+  span:first-child {
+    align-self: flex-start;
+    margin-top: 1rem;
+  }
+`;
+const ContentWrap = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+const Title = styled.h2`
+  margin-top: 2rem;
+  width: 80%;
+`;
+const Content = styled.p`
+  width: 80%;
+`;
 
+const Todo = () => {
   const { id } = useParams();
   const todoCtx = useContext(TodoContext);
   const todo = todoCtx.todos.find((todo) => todo.id === id);
@@ -50,7 +50,7 @@ const Todo = () => {
   };
 
   return (
-    <Todo>
+    <TodoSt>
       {modalIsShown && <DeleteConfirm onClose={hideModalHandler} todoId={id} />}
       <Card>
         <ButtonWrap width={"6rem"} bgColor={"#BABABA"} paddingSide={"1.2rem"}>
@@ -76,7 +76,7 @@ const Todo = () => {
           </ActiveBtnWrap>
         </ContentWrap>
       </Card>
-    </Todo>
+    </TodoSt>
   );
 };
 export default Todo;

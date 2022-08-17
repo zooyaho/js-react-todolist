@@ -2,32 +2,26 @@ import { useContext } from "react";
 import styled from "styled-components";
 import TodoContext from "../../store/todo-context";
 import TodoItem from "./TodoItem";
-const TodoList = () => {
-  /* CSS */
-  const TodoList = styled.main`
-    width: 30rem;
-    margin-top: 2rem;
-    ul {
-      padding: 0;
-      margin: 0;
-    }
-    p {
-      padding-top: 4rem;
-      font-size: 18px;
-      font-weight: bold;
-      color: #828282;
-      text-align: center;
-    }
-  `;
 
+/* CSS */
+const TodoListSt = styled.main`
+  width: 30rem;
+  margin-top: 2rem;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    padding-top: 4rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #828282;
+    text-align: center;
+  }
+`;
+
+const TodoList = () => {
   const todoCtx = useContext(TodoContext);
-  /*
-      key={todo.id}
-      id={todo.id}
-      title={todo.title}
-      content={todo.content}
-      date={todo.date}
-  */
 
   const itemList =
     todoCtx.todos.length === 0 ? (
@@ -45,7 +39,7 @@ const TodoList = () => {
       </ul>
     );
 
-  return <TodoList>{itemList}</TodoList>;
+  return <TodoListSt>{itemList}</TodoListSt>;
 };
 
 export default TodoList;

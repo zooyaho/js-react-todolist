@@ -9,15 +9,15 @@ import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 
-const UpdateTodo = () => {
-  /* CSS */
-  const UpdateTodo = styled.div`
-    div div:first-child {
-      margin-left: 2rem;
-      margin-top: 2.5rem;
-    }
-  `;
+/* CSS */
+const UpdateTodoSt = styled.div`
+  div div:first-child {
+    margin-left: 2rem;
+    margin-top: 2.5rem;
+  }
+`;
 
+const UpdateTodo = () => {
   const navigate = useNavigate();
   const todoCtx = useContext(TodoContext);
   const { id } = useParams();
@@ -29,7 +29,7 @@ const UpdateTodo = () => {
   };
 
   return (
-    <UpdateTodo>
+    <UpdateTodoSt>
       <Card>
         <Date date={todo.date}></Date>
         <UpdateForm
@@ -58,7 +58,7 @@ const UpdateTodo = () => {
           </ActiveBtnWrap>
         </UpdateForm>
       </Card>
-    </UpdateTodo>
+    </UpdateTodoSt>
   );
 };
 
