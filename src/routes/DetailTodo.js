@@ -20,7 +20,7 @@ const TodoSt = styled.div`
     margin-top: 1rem;
   }
 `;
-const ContentWrap = styled.p`
+const ContentWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
