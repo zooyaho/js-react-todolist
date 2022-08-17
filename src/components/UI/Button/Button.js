@@ -15,8 +15,13 @@ const Button = (props) => {
   const clickHandler = () => {
     if (props.modalIsShow) {
       props.onModalOpen();
-    } else {
+    }
+    if (props.modalIsShow === false) {
       props.onModalHide();
+    }
+    if (props.isSave) {
+      console.log("save btn");
+      props.onTodoSave();
     }
   };
 

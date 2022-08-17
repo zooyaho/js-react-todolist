@@ -32,10 +32,8 @@ const WriteForm = (props) => {
   const contentInputRef = useRef();
 
   const submitHandler = (event) => {
+    console.log("Submit");
     event.preventDefault();
-    // console.log("id: ", id);
-    // console.log("title: ", titleInputRef.current.value);
-    // console.log("content: ", contentInputRef.current.value);
     props.onAddTodo(
       id,
       titleInputRef.current.value,

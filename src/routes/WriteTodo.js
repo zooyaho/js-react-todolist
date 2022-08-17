@@ -3,13 +3,14 @@ import Card from "../components/UI/Card";
 import ActiveBtnWrap from "../components/UI/Button/ActiveBtnWrap";
 import ButtonWrap from "../components/UI/Button/ButtonWrap";
 import Button from "../components/UI/Button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import TodoContext from "../store/todo-context";
 import DateUI from "../components/UI/DateUI";
 
 const WriteTodo = () => {
   const todoCtx = useContext(TodoContext);
+  let navigate = useNavigate();
 
   const nowTime = new Date();
   const year = nowTime.getFullYear();
@@ -25,8 +26,6 @@ const WriteTodo = () => {
       date: todayDate,
     };
     todoCtx.addTodo(addItem);
-
-    console.log("submit success");
   };
 
   return (
@@ -37,7 +36,13 @@ const WriteTodo = () => {
           <ButtonWrap bgColor={"#BABABA"} paddingSide={"2rem"}>
             <Link to="/">Back</Link>
           </ButtonWrap>
-          <Button bgColor={"#6ACE5A"} paddingSide={"2rem"} type="submit">
+          <Button
+            bgColor={"#6ACE5A"}
+            paddingSide={"2rem"}
+            type="submit"
+            isSave={true}
+            onTodoSave={() => navigate(-1)}
+          >
             Save
           </Button>
         </ActiveBtnWrap>

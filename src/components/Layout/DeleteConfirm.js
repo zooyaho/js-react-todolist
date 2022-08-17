@@ -27,8 +27,6 @@ const DeleteConfirm = (props) => {
   const todoCtx = useContext(TodoContext);
 
   const todoDeleteHandler = () => {
-    // id받아와서 해당 todo 삭제하기~~
-    // props.todoId;
     todoCtx.removeTodo(props.todoId);
   };
   return (
