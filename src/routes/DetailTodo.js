@@ -4,9 +4,12 @@ import Card from "../components/UI/Card";
 import Date from "../components/UI/DateUI";
 import Button from "../components/UI/Button/Button";
 import ButtonWrap from "../components/UI/Button/ButtonWrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import TodoContext from "../store/todo-context";
 
 const Todo = () => {
+  /* CSS */
   const Todo = styled.div`
     div div:first-child {
       margin-left: 2rem;
@@ -31,6 +34,14 @@ const Todo = () => {
     width: 80%;
   `;
 
+  const { id } = useParams();
+  const todoCtx = useContext(TodoContext);
+  const todo = todoCtx.todos.find((todo) => todo.id === id);
+
+  // const todoDeleteHandler = () => {
+  //   todoCtx.removeTodo(id);
+  // };
+
   return (
     <Todo>
       <Card>
@@ -38,24 +49,23 @@ const Todo = () => {
           <Link to="/">Back</Link>
         </ButtonWrap>
         <ContentWrap>
-          <Date date={"22.08.15"}></Date>
-          <Title>What is Lorem Ipsum?</Title>
-          <Content>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,{" "}
-          </Content>
+          <Date date={todo.date}></Date>
+          <Title>{todo.title}</Title>
+          <Content>{todo.content}</Content>
+          <ActiveBtnWrap>
+            <Button
+              bgColor={"#EB7474"}
+              paddingSide={"1.6rem"}
+              // onClick={todoDeleteHandler}
+              type="button"
+            >
+              Delete
+            </Button>
+            <ButtonWrap bgColor={"#5780EB"} paddingSide={"1.2rem"}>
+              <Link to="/update/123">Update</Link>
+            </ButtonWrap>
+          </ActiveBtnWrap>
         </ContentWrap>
-        <ActiveBtnWrap>
-          <Button bgColor={"#EB7474"} type="button">
-            Delete
-          </Button>
-          <ButtonWrap bgColor={"#5780EB"} paddingSide={"1.2rem"}>
-            <Link to="/update/123">Update</Link>
-          </ButtonWrap>
-        </ActiveBtnWrap>
       </Card>
     </Todo>
   );
