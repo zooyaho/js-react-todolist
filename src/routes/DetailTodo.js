@@ -4,8 +4,9 @@ import Card from "../components/UI/Card";
 import Date from "../components/UI/DateUI";
 import Button from "../components/UI/Button/Button";
 import ButtonWrap from "../components/UI/Button/ButtonWrap";
+import DeleteConfirm from "../components/Layout/DeleteConfirm";
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import TodoContext from "../store/todo-context";
 
 const Todo = () => {
@@ -38,12 +39,20 @@ const Todo = () => {
   const todoCtx = useContext(TodoContext);
   const todo = todoCtx.todos.find((todo) => todo.id === id);
 
-  // const todoDeleteHandler = () => {
-  //   todoCtx.removeTodo(id);
-  // };
+  const [modalIsShown, setModalIsShown] = useState(false);
+
+  const showModalHandler = () => {
+    setModalIsShown(true);
+  };
+
+  const hideModalHandler = () => {
+    setModalIsShown(false);
+    // todoCtx.removeTodo(id);
+  };
 
   return (
     <Todo>
+      {modalIsShown && <DeleteConfirm onClose={hideModalHandler} todoId={id} />}
       <Card>
         <ButtonWrap width={"6rem"} bgColor={"#BABABA"} paddingSide={"1.2rem"}>
           <Link to="/">Back</Link>
@@ -54,9 +63,10 @@ const Todo = () => {
           <Content>{todo.content}</Content>
           <ActiveBtnWrap>
             <Button
+              modalIsShow={true}
+              onModalOpen={showModalHandler}
               bgColor={"#EB7474"}
               paddingSide={"1.6rem"}
-              // onClick={todoDeleteHandler}
               type="button"
             >
               Delete

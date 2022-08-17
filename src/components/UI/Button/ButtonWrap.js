@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ButtonWrap = (props) => {
+  /* CSS */
   const ButtonWrap = styled.div`
     width: ${(props) => props.width};
     font-size: 16px;
@@ -17,8 +18,16 @@ const ButtonWrap = (props) => {
       text-decoration: none;
     }
   `;
+
+  const clickHandler = () => {
+    if (props.type === "TODO_DELETE") {
+      props.onTodoDelete();
+    }
+  };
+
   return (
     <ButtonWrap
+      onClick={clickHandler}
       width={props.width}
       bgColor={props.bgColor}
       paddingSide={props.paddingSide}

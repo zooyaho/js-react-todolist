@@ -12,8 +12,17 @@ const Button = (props) => {
     font-weight: bold;
   `;
 
+  const clickHandler = () => {
+    if (props.modalIsShow) {
+      props.onModalOpen();
+    } else {
+      props.onModalHide();
+    }
+  };
+
   return (
     <Button
+      onClick={clickHandler}
       bgColor={props.bgColor}
       paddingSide={props.paddingSide}
       type={props.type}
