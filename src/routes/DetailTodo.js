@@ -5,19 +5,22 @@ import Date from "../components/UI/DateUI";
 import Button from "../components/UI/Button/Button";
 import ButtonWrap from "../components/UI/Button/ButtonWrap";
 import DeleteConfirm from "../components/Layout/DeleteConfirm";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import TodoContext from "../store/todo-context";
 
 /* CSS */
 const TodoSt = styled.div`
   div div:first-child {
-    margin-left: 2rem;
     margin-top: 2.5rem;
   }
-  span:first-child {
+  div div:first-child > button {
     align-self: flex-start;
-    margin-top: 1rem;
+    margin-left: 2rem;
+  }
+  span {
+    align-self: flex-start;
+    margin-top: 2rem;
   }
 `;
 const ContentWrap = styled.div`
@@ -35,6 +38,7 @@ const Content = styled.p`
 `;
 
 const Todo = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const todoCtx = useContext(TodoContext);
   const todo = todoCtx.todos.find((todo) => todo.id === id);
@@ -53,16 +57,21 @@ const Todo = () => {
     <TodoSt>
       {modalIsShown && <DeleteConfirm onClose={hideModalHandler} todoId={id} />}
       <Card>
-        <ButtonWrap width={"6rem"} bgColor={"#BABABA"} paddingSide={"1.2rem"}>
-          <Link to="/">Back</Link>
-        </ButtonWrap>
         <ContentWrap>
+          <Button
+            bgColor={"#BABABA"}
+            paddingSide={"2rem"}
+            mode={"BACK"}
+            onBack={() => navigate(-1)}
+          >
+            Back
+          </Button>
           <Date date={todo.date}></Date>
           <Title>{todo.title}</Title>
           <Content>{todo.content}</Content>
           <ActiveBtnWrap>
             <Button
-              modalIsShow={true}
+              mode={"MODAL_SHOW"}
               onModalOpen={showModalHandler}
               bgColor={"#EB7474"}
               paddingSide={"1.6rem"}

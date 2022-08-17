@@ -41,8 +41,9 @@ const UpdateTodo = () => {
             <Button
               bgColor={"#BABABA"}
               paddingSide={"2rem"}
-              isSave={true}
-              onTodoSave={() => navigate(-1)}
+              type="button"
+              mode={"BACK"}
+              onBack={() => navigate(-1)}
             >
               Back
             </Button>
@@ -50,8 +51,8 @@ const UpdateTodo = () => {
               bgColor={"#6ACE5A"}
               paddingSide={"2rem"}
               type="submit"
-              isSave={true}
-              onTodoSave={() => navigate(-1)}
+              mode={"BACK"}
+              onBack={() => navigate(-1)}
             >
               Save
             </Button>

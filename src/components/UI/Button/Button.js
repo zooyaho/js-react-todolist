@@ -13,14 +13,14 @@ const ButtonSt = styled.button`
 
 const Button = (props) => {
   const clickHandler = () => {
-    if (props.modalIsShow) {
+    if (props.mode === "MODAL_SHOW") {
       props.onModalOpen();
     }
-    if (props.modalIsShow === false) {
+    if (props.mode === "MODAL_HIDE") {
       props.onModalHide();
     }
-    if (props.isSave) {
-      props.onTodoSave();
+    if (props.mode === "BACK") {
+      props.onBack();
     }
   };
 

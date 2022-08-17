@@ -20,7 +20,7 @@ const ButtonWrapSt = styled.div`
 
 const ButtonWrap = (props) => {
   const clickHandler = () => {
-    if (props.type === "TODO_DELETE") {
+    if (props.mode === "TODO_DELETE") {
       props.onTodoDelete();
     }
   };

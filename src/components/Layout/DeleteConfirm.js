@@ -36,7 +36,7 @@ const DeleteConfirm = (props) => {
         <Content>Are you sure you want to delete Todo?</Content>
         <ActiveBtnWrap>
           <Button
-            modalIsShow={false}
+            mode={"MODAL_HIDE"}
             onModalHide={props.onClose}
             bgColor={"#EB7474"}
             paddingSide={"1.5rem"}
@@ -45,7 +45,7 @@ const DeleteConfirm = (props) => {
             Cancel
           </Button>
           <ButtonWrap
-            type={"TODO_DELETE"}
+            mode={"TODO_DELETE"}
             onTodoDelete={todoDeleteHandler}
             bgColor={"#5780EB"}
             paddingSide={"1.6rem"}

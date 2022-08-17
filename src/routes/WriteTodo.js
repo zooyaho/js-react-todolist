@@ -33,15 +33,24 @@ const WriteTodo = () => {
       <DateUI date={todayDate}></DateUI>
       <WriteForm onAddTodo={addTodoHandler}>
         <ActiveBtnWrap>
-          <ButtonWrap bgColor={"#BABABA"} paddingSide={"2rem"}>
+          {/* <ButtonWrap bgColor={"#BABABA"} paddingSide={"2rem"}>
             <Link to="/">Back</Link>
-          </ButtonWrap>
+          </ButtonWrap> */}
+          <Button
+            bgColor={"#BABABA"}
+            paddingSide={"2rem"}
+            type="button"
+            mode={"BACK"}
+            onBack={() => navigate(-1)}
+          >
+            Back
+          </Button>
           <Button
             bgColor={"#6ACE5A"}
             paddingSide={"2rem"}
             type="submit"
-            isSave={true}
-            onTodoSave={() => navigate(-1)}
+            mode={"BACK"}
+            onBack={() => navigate(-1)}
           >
             Save
           </Button>
