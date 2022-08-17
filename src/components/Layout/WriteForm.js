@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { v4 } from "uuid";
-import Form from "./Form";
+import Form from "../UI/Form";
 
 const WriteForm = (props) => {
   const id = v4();

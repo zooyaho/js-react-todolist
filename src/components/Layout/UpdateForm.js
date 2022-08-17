@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Form from "./Form";
+import Form from "../UI/Form";
 
 const UpdateForm = (props) => {
   const titleInputRef = useRef();
