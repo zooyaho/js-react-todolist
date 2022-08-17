@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Date = ({ date }) => {
+const DateUI = ({ date }) => {
   const Date = styled.span`
     display: block;
     font-weight: bold;
@@ -11,4 +11,4 @@ const Date = ({ date }) => {
   `;
   return <Date>{date}</Date>;
 };
-export default Date;
+export default DateUI;

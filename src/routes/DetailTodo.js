@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ActiveBtnWrap from "../components/UI/Button/ActiveBtnWrap";
 import Card from "../components/UI/Card";
-import Date from "../components/UI/Date";
+import Date from "../components/UI/DateUI";
 import Button from "../components/UI/Button/Button";
 import ButtonWrap from "../components/UI/Button/ButtonWrap";
 import { Link } from "react-router-dom";

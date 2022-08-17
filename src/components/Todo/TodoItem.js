@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Date from "../UI/Date";
+import Date from "../UI/DateUI";
 
 const TodoItem = ({ id, title, date }) => {
   /* CSS */

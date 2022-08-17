@@ -1,25 +1,49 @@
-import WriteForm from "../components/Layout/Form";
-import Date from "../components/UI/Date";
+import WriteForm from "../components/Layout/WriteForm";
 import Card from "../components/UI/Card";
 import ActiveBtnWrap from "../components/UI/Button/ActiveBtnWrap";
 import ButtonWrap from "../components/UI/Button/ButtonWrap";
+import Button from "../components/UI/Button/Button";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import TodoContext from "../store/todo-context";
+import DateUI from "../components/UI/DateUI";
 
-const Write = () => {
+const WriteTodo = () => {
+  const todoCtx = useContext(TodoContext);
+
+  const nowTime = new Date();
+  const year = nowTime.getFullYear();
+  const month = nowTime.getMonth() + 1;
+  const date = nowTime.getDate();
+  const todayDate = `${year}.${month}.${date}`;
+
+  const addTodoHandler = (id, titleInputRef, contentInputRef) => {
+    const addItem = {
+      id: id,
+      title: titleInputRef,
+      content: contentInputRef,
+      date: todayDate,
+    };
+    todoCtx.addTodo(addItem);
+
+    console.log("submit success");
+  };
+
   return (
     <Card>
-      <Date date={"22.08.15"}></Date>
-      <WriteForm />
-      <ActiveBtnWrap>
-        <ButtonWrap bgColor={"#BABABA"} paddingSide={"2rem"}>
-          <Link to="/">Back</Link>
-        </ButtonWrap>
-        <ButtonWrap bgColor={"#6ACE5A"} paddingSide={"2rem"}>
-          <Link to="/">Save</Link>
-        </ButtonWrap>
-      </ActiveBtnWrap>
+      <DateUI date={todayDate}></DateUI>
+      <WriteForm onAddTodo={addTodoHandler}>
+        <ActiveBtnWrap>
+          <ButtonWrap bgColor={"#BABABA"} paddingSide={"2rem"}>
+            <Link to="/">Back</Link>
+          </ButtonWrap>
+          <Button bgColor={"#6ACE5A"} paddingSide={"2rem"} type="submit">
+            Save
+          </Button>
+        </ActiveBtnWrap>
+      </WriteForm>
     </Card>
   );
 };
 
-export default Write;
+export default WriteTodo;
