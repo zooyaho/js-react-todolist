@@ -24,7 +24,8 @@
 - useContext
 - useRef
 - useParams
-- useVavigate
+<img src="https://img.shields.io/badge/React-v18-61dafb?logo=React"/>
+- useNavigate
 
 ● React-router-dom을 사용한 화면 전환  
 ● ReactDOM의 Potal을 사용한 Modal창 구현
