@@ -2,6 +2,8 @@
 
 > React로 구현한 Todo List입니다.
 
+<br><br>
+
 ## 💻 실행 화면
 
 <div align="center">
@@ -24,7 +26,6 @@
 - useContext
 - useRef
 - useParams
-<img src="https://img.shields.io/badge/React-v18-61dafb?logo=React"/>
 - useNavigate
 
 ● React-router-dom을 사용한 화면 전환  
