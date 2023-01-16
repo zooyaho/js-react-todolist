@@ -1,9 +1,8 @@
 import WriteForm from "../components/Layout/WriteForm";
 import Card from "../components/UI/Card";
 import ActiveBtnWrap from "../components/UI/Button/ActiveBtnWrap";
-import ButtonWrap from "../components/UI/Button/ButtonWrap";
 import Button from "../components/UI/Button/Button";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import TodoContext from "../store/todo-context";
 import DateUI from "../components/UI/DateUI";
